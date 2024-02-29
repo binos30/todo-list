@@ -6,7 +6,7 @@ const App = () => {
   useEffect(() => {
     const date = new Date();
     const yearElement = document.getElementById("current-year");
-    yearElement && (yearElement.innerHTML = date.getFullYear().toString());
+    yearElement && (yearElement.textContent = date.getFullYear().toString());
   }, []);
 
   return (
