@@ -3,8 +3,21 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: weekly
     open-pull-requests-limit: 10
+    groups:
+      github_actions:
+        patterns:
+          - "*"
+  - package-ecosystem: npm
+    directory: / # Location of package manifests
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      npm:
+        patterns:
+          - "*"
